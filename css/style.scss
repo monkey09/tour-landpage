@@ -1,0 +1,242 @@
+// Main Styles
+$main-color : rgb(29, 32, 37);
+$secondary-color: #FE7D49;
+$dark: #343A40;
+$gold: #f1c40f;
+$blue: #03528A;
+$gray: #E9ECEF;
+$pink: #fab1a0;
+$brown: #C17D11;
+section, nav, footer, #upperbar, #lowerbar{
+	width:100%;
+}
+*{
+	&:focus{
+		outline: 0 !important;
+	}
+}
+a{
+	color: inherit;
+	&:hover{
+		text-decoration: none;
+		color: inherit;
+	}
+}
+.carousel{
+	height:100%;
+	width:100%;
+	.carousel-inner{
+		height:100%;
+		width:100%;
+		.carousel-item{
+			height:100%;
+			width:100%;
+		}
+	}
+}
+.overlay{
+	position:relative;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-color: rgba(0,0,0,.3);
+}
+.main-header{
+	margin-bottom: 100px;
+	text-transform: capitalize;
+}
+@mixin image-settings ($size, $position){
+	background:{
+		size: $size;
+		position: $position;
+		repeat: no-repeat;
+	}
+}
+@mixin overlay ($op) {
+	position:relative;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background:{
+		color: rgba(0,0,0,$op);
+	}
+}
+@mixin image-def ($name) {
+	background:{
+		image: url('../imgs/#{$name}');
+	}
+}
+h1 span {
+	color: #03528A;
+}
+form button {
+	background-color: #03528A !important;
+}
+// navbar
+#nav{
+	// transition: background-color .3s;
+}
+// slider
+#slider {
+	button{
+		background-color: #03528A !important
+	}
+}
+// brief
+@media (max-width: 600px) {
+	.uk-card{
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+}
+@media (min-width: 600px) {
+
+	#brief{
+		margin-top:-100px;
+		#center-brief{
+			margin-top:-50px
+		}
+	}
+}
+// features
+#features{
+	.uk-card span svg{
+		width: 100px;
+		color: #B9C6D1;
+	}
+}
+// services
+#services{
+ @include image-def("slider-bg-2.jpg");
+ @include image-settings(cover, center);
+ h1 span{
+	 color: #FFF!important;
+ }
+ .uk-heading-bullet::before{
+	 border-left-color: #FFA200!important;
+ }
+ h3{
+	 color: #FFA200
+ }
+}
+// gallery
+#gallery{
+	.uk-card {
+		img {
+			width:100%;
+			height: 600px !important;
+		}
+	}
+}
+// lowerbar
+#lowerbar{
+	height: 56px;
+}
+
+// keframes
+@keyframes navbar-apear {
+	0%{
+		left:0%;
+		width:0%;
+	}
+	50%{
+		left:0%;
+		width:100%;
+	}
+	100%{
+		left:100%;
+		width:100%;
+	}
+}
+@keyframes slider-apear{
+	0%{
+		top:0%;
+		height:0%;
+	}
+	50%{
+		top:0%;
+		height:100%;
+	}
+	100%{
+		top: 100%;
+	}
+}
+@keyframes slider-apear-oppo{
+	0%{
+		bottom:-100%;
+		height:100%;
+	}
+	50%{
+		bottom:0%;
+		height:100%;
+	}
+	100%{
+		bottom: 100%;
+	}
+}
+@keyframes content-apear {
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+@keyframes brief-apear {
+	0%{
+		opacity:0;
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity:1;
+		transform: translateY(0);
+	}
+}
+@keyframes brief-apear-oppo {
+	0%{
+		opacity:0;
+		transform: translateY(50px);
+	}
+	100%{
+		opacity:1;
+		transform: translateY(0);
+	}
+}
+@keyframes brief-content-apear {
+	0%{
+		opacity:0;
+		transform: translateX(-50px);
+	}
+	100%{
+		opacity:1;
+		transform: translateX(0);
+	}
+}
+@keyframes hr-apear{
+	0%{
+		width:0%;
+	}
+	100%{
+		width:100%;
+	}
+}
+
+
+// footer
+#footer{
+	ul{
+		li a, li{
+			color: #AAA;
+			&:hover{
+				color: #FFF;
+			}
+		}
+	}
+}
+// lowerbar
+#lowerbar{
+	background-color: #111;
+	height:56px;
+}
